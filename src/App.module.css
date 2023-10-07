@@ -1,0 +1,23 @@
+.container {
+  flex: 1;
+  background-color: var(--gray-600);
+}
+
+.main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+  width: calc(50vh + 20%);
+  max-width: 1280px;
+
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 564px) {
+  .main {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+}
