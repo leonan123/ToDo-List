@@ -28,8 +28,6 @@ export function TaskProvider({ children }: TaskProviderProps) {
         },
       ]
 
-      localStorage.setItem('tasks', JSON.stringify(newTasks))
-
       return newTasks
     })
   }
@@ -46,8 +44,6 @@ export function TaskProvider({ children }: TaskProviderProps) {
         return task
       })
 
-      localStorage.setItem('tasks', JSON.stringify(newTasks))
-
       return newTasks
     })
   }
@@ -55,8 +51,6 @@ export function TaskProvider({ children }: TaskProviderProps) {
   function deleteTask(id: string) {
     setTasks((prevState) => {
       const newTasks = prevState.filter((task) => task.id !== id)
-
-      localStorage.setItem('tasks', JSON.stringify(newTasks))
 
       return newTasks
     })
@@ -68,6 +62,11 @@ export function TaskProvider({ children }: TaskProviderProps) {
       setTasks(JSON.parse(tasksStorage))
     }
   }, [])
+
+  useEffect(() => {
+    sessionStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
+
   return (
     <TaskContext.Provider
       value={{ tasks, handleFormSubmit, setTasksAsConcluded, deleteTask }}

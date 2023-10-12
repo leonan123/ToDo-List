@@ -9,7 +9,7 @@
   justify-content: center;
   flex-direction: column;
 
-  width: calc(50vh + 20%);
+  width: calc(50vw + 20%);
   max-width: 1280px;
 
   margin: 0 auto;

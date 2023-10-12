@@ -64,6 +64,8 @@
   height: 0;
 
   visibility: hidden;
+  user-select: none;
+  touch-action: none;
 }
 
 .taskDescription {
