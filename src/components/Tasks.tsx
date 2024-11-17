@@ -12,7 +12,7 @@ export function Tasks() {
   const { tasks } = useTasks()
 
   const totalTasks = tasks.length
-  const concludedTask = tasks.filter((task) => task.concluded === true).length
+  const concludedTask = tasks.filter((task) => !!task.concluded).length
 
   return (
     <section className={styles.taskListContainer}>

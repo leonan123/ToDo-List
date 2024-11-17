@@ -6,8 +6,10 @@ import { useTasks } from '../hooks/useTasks'
 interface TaskItemProps {
   task: TaskType
 }
+
 export function TaskItem({ task }: TaskItemProps) {
   const { setTasksAsConcluded, deleteTask } = useTasks()
+
   function handleTaskConcluded() {
     setTasksAsConcluded(task.id)
   }
